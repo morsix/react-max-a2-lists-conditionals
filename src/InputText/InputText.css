@@ -1,0 +1,9 @@
+.InputText{
+    grid-column: 4/10;
+    display: grid;
+    grid-row-gap: 10px;
+}
+
+#inputTextId{
+    resize: none;
+}
