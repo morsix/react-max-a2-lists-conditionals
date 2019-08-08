@@ -15,11 +15,6 @@
   grid-column: span 6;
 }
 
-
-.grid-column-3-9{
-  grid-column: 4/8;
-}
-
 .grid-column-1{
   grid-column: span 1;
 }

@@ -1,0 +1,12 @@
+.Char{
+    display: inline-block;
+    padding: 5px;
+    text-align: center;
+    margin: 5px;
+    border: 1px solid blue;
+    cursor: crosshair;
+}
+
+.Char:hover{
+    background-color: red;
+}
