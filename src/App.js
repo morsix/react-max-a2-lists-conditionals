@@ -27,13 +27,20 @@ function App() {
       })
   }
 
-  const charClickHandler = (index) =>{
+  const charClickHandler = (index) => {
+    shot();
     const charArr = [...charArrState.charArr];
     charArr.splice(index, 1);
-    setCharArrState({charArr: charArr});
+    setCharArrState({ charArr: charArr });
     setInputTextState({
       textValue: charArr.join('')
     })
+  }
+
+  const shot = () =>{
+    var sound = new Audio();
+    sound.src = "http://localhost:3000/shot.mp3";
+    sound.play()
   }
 
   const generateRandomString = () =>{
