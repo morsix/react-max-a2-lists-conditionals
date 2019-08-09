@@ -8,7 +8,7 @@ import Char from './Char/Char'
 
 function App() {
   const [inputTextState, setInputTextState] = useState({
-    textValue:"adf"
+    textValue:""
   })
 
   const [charArrState, setCharArrState] = useState({
@@ -27,11 +27,24 @@ function App() {
       })
   }
 
+  const charClickHandler = (index) =>{
+    const charArr = [...charArrState.charArr];
+    charArr.splice(index, 1);
+    setCharArrState({charArr: charArr});
+    setInputTextState({
+      textValue: charArr.join('')
+    })
+  }
+
+  const generateRandomString = () =>{
+    return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+  }
+
   let chars = null;
 
   chars = (
       charArrState.charArr.map((charEl, index) => {
-        return <Char char={charEl} className="grid-column-1"/>
+        return <Char key={generateRandomString()} char={charEl} click={ ()=> charClickHandler(index)}  className="grid-column-1"/>
       }
     ));
 
