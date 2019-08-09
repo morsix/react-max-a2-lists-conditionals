@@ -8,19 +8,20 @@ import Char from './Char/Char'
 
 function App() {
   const [inputTextState, setInputTextState] = useState({
-    textValue:""
+    textValue:"adf"
   })
 
   const [charArrState, setCharArrState] = useState({
-    charArr:['b','c','d']
+    charArr:[]
   })
 
   const inputTextChangeHandler = (event) =>{
+      let formattedText = event.target.value.replace(/[^A-Za-z]/g, "").substring(0,100);
       setInputTextState({
-        textValue: event.target.value
+        textValue: formattedText
       })
 
-      const charArr = [...event.target.value.split("")].filter(el=> el.match(/^[0-9a-zA-Z]+$/));
+      const charArr = [...formattedText.split("")].filter(el=> el.match(/^[0-9a-zA-Z]+$/));
       setCharArrState({
         charArr: charArr
       })
